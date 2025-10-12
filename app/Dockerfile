@@ -2,12 +2,19 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY . /app
+# Copy requirements first to leverage caching
+COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5002 
+# Copy the rest of the app
+COPY . .
 
-# 5002 this is for local dev
+# Create non-root user
+RUN useradd -m appuser
+USER appuser
+
+EXPOSE 5002
 
 CMD ["python", "app.py"]
