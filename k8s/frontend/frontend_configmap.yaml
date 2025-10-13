@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: three-tier-app
+data:
+  REACT_APP_API_URL: "http://backend-service:3000"
+  NODE_ENV: "production"
