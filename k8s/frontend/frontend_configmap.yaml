@@ -4,5 +4,5 @@ metadata:
   name: frontend-config
   namespace: three-tier-app
 data:
-  REACT_APP_API_URL: "http://backend-service:3000"
+  REACT_APP_API_URL: "http://backend-service:5001"
   NODE_ENV: "production"
