@@ -19,7 +19,7 @@ spec:
         fsGroup: 1001
       containers:
       - name: frontend
-        image: your-registry/frontend:latest
+        image: olarashad/three-tier-frontend:latest
         ports:
         - containerPort: 80
         envFrom:
