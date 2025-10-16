@@ -16,6 +16,7 @@ A production-ready three-tier web application deployed on Kubernetes with ArgoCD
 - [Production Deployment](#production-deployment)
 - [Monitoring and Maintenance](#monitoring-and-maintenance)
 - [Troubleshooting](#troubleshooting)
+- [Screen Shots](#screen-shots)
 - [References](#references)
 
 ## Architecture Overview
@@ -213,7 +214,7 @@ kubectl create namespace three-tier-app
 
 ```bash
 kubectl create secret generic db-credentials \
-  --from-literal=DB_HOST=192.168.1.100 \
+  --from-literal=DB_HOST=your_ip \
   --from-literal=DB_USER=app_user \
   --from-literal=DB_PASSWORD=secure_password \
   --from-literal=DB_NAME=three_tier_app \
@@ -376,4 +377,14 @@ With ArgoCD, simply push changes to your Git repository. ArgoCD will automatical
 - Check probe configuration in deployments
 - Review application logs for errors
 
+## Screen Shots
+
+### 1. ArgoCD UI – Deployed Applications
+![ArgoCD UI](./images/argo.png)
+
+### 2. Frontend Application – Running in Browser
+![Frontend App](./images/rename.png)
+
 ## References
+
+- Original application source: [pdichone/docker-course-three-tier-web-app](https://github.com/pdichone/docker-course-three-tier-web-app)
